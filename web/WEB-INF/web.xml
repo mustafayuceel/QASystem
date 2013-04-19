@@ -6,11 +6,23 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ApplicationController</servlet-name>
-        <url-pattern>/ApplicationController</url-pattern>
+        <url-pattern>/qa</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ApplicationController</servlet-name>
-        <url-pattern>/ApplicationController/addEvent</url-pattern>
+        <url-pattern>/qa/getAllDbNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationController</servlet-name>
+        <url-pattern>/qa/getAllCollectionNames</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationController</servlet-name>
+        <url-pattern>/qa/addEvent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationController</servlet-name>
+        <url-pattern>/qa/test</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

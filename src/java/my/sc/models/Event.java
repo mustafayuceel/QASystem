@@ -14,6 +14,7 @@ public class Event {
     String eventName;
     String actorId;
     String detail;
+
     long time;
 
     public Event(String eventId,String eventName, String actorId, String detail, long time) {
@@ -22,7 +23,11 @@ public class Event {
         this.detail = detail;
         this.eventId = eventId;
         this.time = time;
+
+        
+        
     }
+
 
     public String getEventId() {
         return eventId;

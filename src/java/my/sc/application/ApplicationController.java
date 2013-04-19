@@ -54,17 +54,17 @@ public class ApplicationController extends HttpServlet {
             MongoDbOperations mongoDbOperations = new MongoDbOperations();
 
 
-            if (userPath.equals("/ApplicationController/getAllDbNames")) {
+            if (userPath.equals("/qa/getAllDbNames")) {
 
                 List<String> sonuc = mongoDbOperations.getAllDbNames();
                 jsonResponse = gson.toJson(sonuc);
 
-            } else if (userPath.equals("/ApplicationController/getAllCollectionNames")) {
+            } else if (userPath.equals("/qa/getAllCollectionNames")) {
 
                 Set<String> sonuc = mongoDbOperations.getAllCollectionNames(dbName);
                 jsonResponse = gson.toJson(sonuc);
 
-            } else if (userPath.equals("/ApplicationController/addEvent")) {
+            } else if (userPath.equals("/qa/addEvent")) {
 
                 String author_id = request.getParameter("author_id");
                 String m_type = request.getParameter("m_type");
@@ -86,7 +86,7 @@ public class ApplicationController extends HttpServlet {
 
                 jsonResponse = gson.toJson(sonuc);
 
-            } else if (userPath.equals("/ApplicationController/test")) {
+            } else if (userPath.equals("/qa/test")) {
 
                 String sonuc = "test";
                 jsonResponse = gson.toJson(sonuc);

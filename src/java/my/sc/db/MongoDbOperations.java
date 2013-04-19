@@ -4,7 +4,6 @@
  */
 package my.sc.db;
 
-
 import com.google.gson.Gson;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
@@ -38,7 +37,7 @@ public class MongoDbOperations {
         }
     }
 
-    public Result addEvent(String dbName, String collectionName, Target target, Event event,String messageText) {
+    public Result addEvent(String dbName, String collectionName, Target target, Event event, String messageText) {
 
         Result result = new Result();
 
@@ -115,7 +114,7 @@ public class MongoDbOperations {
 
                 result.setSuccess(true);
                 result.setResultCode("RSLT.001");
-                result.setResultExplanation("Successfull");
+                result.setResultExplanation("Successful");
 
             } else if (eventComment || eventAnswer || eventVote || eventFavorit || eventAccept) {
 
@@ -125,11 +124,11 @@ public class MongoDbOperations {
                 if (Q) {
                     if (eventComment) {
                         authorPoint = Point.Q_COMMENTED.actorPoint();
-                        extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //          messagePoint = Point.Q_COMMENTED.ownerPoint();
                     } else if (eventAnswer) {
                         authorPoint = Point.Q_ANSWERED.actorPoint();
-                         extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //          messagePoint = Point.Q_ANSWERED.ownerPoint();
                     } else if (eventVote) {
                         if (detailUpped) {
@@ -161,7 +160,7 @@ public class MongoDbOperations {
                         }
                     } else if (eventFavorit) {
                         authorPoint = Point.Q_FAVED.actorPoint();
-                       extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //       messagePoint = Point.Q_FAVED.ownerPoint();
                     }
 
@@ -169,11 +168,11 @@ public class MongoDbOperations {
                 if (A) {
                     if (eventComment) {
                         authorPoint = Point.A_COMMENTED.actorPoint();
-                        extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //      messagePoint = Point.A_COMMENTED.ownerPoint();
                     } else if (eventAccept) {
                         authorPoint = Point.A_ACCEPTED.actorPoint();
-                        extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //        messagePoint = Point.A_ACCEPTED.ownerPoint();
                     } else if (eventVote) {
                         if (detailUpped) {
@@ -189,7 +188,7 @@ public class MongoDbOperations {
                 if (C) {
                     if (eventFavorit) {
                         authorPoint = Point.C_FAVED.actorPoint();
-                        extractFromAuthorPoint=authorPoint;
+                        extractFromAuthorPoint = authorPoint;
                         //         messagePoint = Point.C_FAVED.ownerPoint();
                     }
                 }
@@ -220,7 +219,7 @@ public class MongoDbOperations {
 
                 result.setSuccess(true);
                 result.setResultCode("RSLT.001");
-                result.setResultExplanation("Başarılı");
+                result.setResultExplanation("Successful");
 
             }
 
@@ -291,7 +290,6 @@ public class MongoDbOperations {
                     String eventName = ((BasicBSONObject) messagesList.get(i)).get("eventName").toString();
                     String actorId = ((BasicBSONObject) messagesList.get(i)).get("actorId").toString();
                     String eventId = ((BasicBSONObject) messagesList.get(i)).get("eventId").toString();
-
 
                     if (eventName.equalsIgnoreCase(event.getEventName()) && actorId.equalsIgnoreCase(event.getActorId())) {
 
@@ -364,7 +362,6 @@ public class MongoDbOperations {
         return result;
     }
 
-
     public Set<String> getAllCollectionNames(String dbName) {
 
         dbConManager = new DBConnectionManager();
@@ -372,5 +369,4 @@ public class MongoDbOperations {
         return colls;
 
     }
-
 }
